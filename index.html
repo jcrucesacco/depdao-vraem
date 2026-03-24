@@ -9,14 +9,15 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito',sans-serif;background:#F9F0F4;min-height:100vh;font-size:14px;color:#3a1528}
 .container{max-width:1200px;margin:0 auto;padding:1.2rem 1.5rem}
-
 .header{background:#993556;border-radius:14px;padding:1.3rem 1.8rem;margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 18px rgba(153,53,86,0.18)}
 .header h1{font-size:24px;font-weight:700;color:#fff;letter-spacing:0.03em}
-.header p{font-size:13px;color:#F4C0D1;margin-top:3px}
+.header p{font-size:12px;color:#F4C0D1;margin-top:3px}
 .header-right{display:flex;gap:10px;align-items:center}
 .header input{font-family:'Nunito',sans-serif;font-size:13px;border:1.5px solid #F4C0D1;border-radius:9px;padding:6px 13px;background:rgba(255,255,255,0.18);color:#fff;width:200px}
 .header input::placeholder{color:#F4C0D1}
-
+.sync-badge{font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3)}
+.sync-badge.ok{background:rgba(30,180,100,0.3);border-color:rgba(30,180,100,0.5)}
+.sync-badge.err{background:rgba(220,50,50,0.3);border-color:rgba(220,50,50,0.5)}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:1.2rem}
 .stat{background:#fff;border-radius:11px;padding:12px 16px;border:1.5px solid #F4C0D1;box-shadow:0 2px 8px rgba(153,53,86,0.07)}
 .stat-label{font-size:11px;color:#993556;margin-bottom:4px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
@@ -24,9 +25,8 @@ body{font-family:'Nunito',sans-serif;background:#F9F0F4;min-height:100vh;font-si
 .stat-value.alta{color:#A32D2D}
 .stat-value.media{color:#854F0B}
 .stat-value.baja{color:#0F6E56}
-
 .tabs{display:flex;gap:6px;margin-bottom:1.2rem;flex-wrap:wrap}
-.tab{font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;cursor:pointer;border:none;border-radius:10px;transition:all .15s;white-space:nowrap;letter-spacing:.02em}
+.tab{font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;cursor:pointer;border:none;border-radius:10px;transition:all .15s;white-space:nowrap}
 .tab-reg{background:#534AB7;color:#fff;box-shadow:0 3px 10px rgba(83,74,183,0.3)}
 .tab-reg:hover{background:#3C3489}
 .tab-new{background:#0F6E56;color:#fff;box-shadow:0 3px 10px rgba(15,110,86,0.3)}
@@ -40,11 +40,9 @@ body{font-family:'Nunito',sans-serif;background:#F9F0F4;min-height:100vh;font-si
 .tab-graf{background:#BA7517;color:#fff;box-shadow:0 3px 10px rgba(186,117,23,0.3)}
 .tab-graf:hover{background:#854F0B}
 .tab.inactive{opacity:0.38;filter:saturate(0.3);box-shadow:none}
-
 .panel{display:none}.panel.active{display:block}
-
 .form-card{background:#fff;border:1.5px solid #F4C0D1;border-radius:13px;padding:1.3rem 1.5rem;margin-bottom:1rem;box-shadow:0 2px 8px rgba(153,53,86,0.07)}
-.fs{font-size:11px;font-weight:700;color:#993556;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;margin-top:14px;padding-left:2px;border-left:3px solid #F4C0D1;padding-left:8px}
+.fs{font-size:11px;font-weight:700;color:#993556;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;margin-top:14px;border-left:3px solid #F4C0D1;padding-left:8px}
 .fs:first-child{margin-top:0}
 .fg{display:grid;gap:9px}
 .fg4{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -61,59 +59,41 @@ body{font-family:'Nunito',sans-serif;background:#F9F0F4;min-height:100vh;font-si
 .btn-p{background:#993556;color:#fff;border-color:#993556;box-shadow:0 3px 10px rgba(153,53,86,0.25)}
 .btn-p:hover{background:#72243E;border-color:#72243E}
 .btn-sm{font-size:12px;padding:6px 13px}
-
 .filters{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
 .filters input,.filters select{font-family:'Nunito',sans-serif;font-size:13px;border:1.5px solid #F4C0D1;border-radius:9px;padding:6px 10px;background:#fff;color:#3a1528}
 .filters input{flex:1;min-width:150px}
-
 .tw{overflow-x:auto;border-radius:12px;border:1.5px solid #F4C0D1;background:#fff;box-shadow:0 2px 8px rgba(153,53,86,0.07)}
 table{width:100%;border-collapse:collapse;font-size:12px;font-family:'Nunito',sans-serif}
 th{text-align:left;padding:10px 11px;font-weight:700;font-size:10px;color:#534AB7;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid #CECBF6;white-space:nowrap;background:#EEEDFE}
-th:first-child{border-radius:10px 0 0 0}
-th:last-child{border-radius:0 10px 0 0}
 td{padding:9px 11px;border-bottom:1px solid #F4C0D1;color:#3a1528;vertical-align:top}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#FBEAF0}
-
 .badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
 .badge.alta{background:#FCEBEB;color:#A32D2D}
 .badge.media{background:#FAEEDA;color:#854F0B}
 .badge.baja{background:#E1F5EE;color:#0F6E56}
 .badge.tipo{background:#EEEDFE;color:#534AB7;border:1px solid #CECBF6}
-
 .abt{background:none;border:none;cursor:pointer;color:#993556;font-size:14px;padding:3px 6px;border-radius:6px;transition:all .15s}
 .abt:hover{background:#FBEAF0}
 .abt.del:hover{color:#A32D2D;background:#FCEBEB}
 .empty{text-align:center;padding:2rem;color:#993556;font-size:14px;font-weight:700}
-
-/* MODAL */
 .modal-bg{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(153,53,86,0.3);display:flex;align-items:center;justify-content:center;z-index:1000;backdrop-filter:blur(2px)}
 .modal{background:#fff;border-radius:16px;border:1.5px solid #F4C0D1;padding:1.5rem;width:640px;max-width:95vw;max-height:88vh;overflow-y:auto;box-shadow:0 8px 32px rgba(153,53,86,0.2)}
 .modal h3{font-size:16px;font-weight:700;color:#72243E;margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1.5px solid #F4C0D1}
-
-/* OBJETIVOS */
 .obj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:1rem}
 .obj-card{background:#fff;border:1.5px solid #F4C0D1;border-radius:13px;padding:1.1rem;cursor:pointer;transition:all .15s;box-shadow:0 2px 8px rgba(153,53,86,0.07)}
 .obj-card:hover{background:#FBEAF0;border-color:#D4537E;transform:translateY(-2px);box-shadow:0 6px 16px rgba(153,53,86,0.15)}
 .obj-name{font-size:15px;font-weight:700;color:#72243E;margin-bottom:4px}
 .obj-num{font-size:11px;color:#993556;font-family:monospace;margin-bottom:7px}
-.obj-stat{font-size:12px;color:#534AB7;font-weight:700}
-
-/* LINEA DE TIEMPO */
 .tl-day{margin-bottom:1.4rem}
 .tl-date{font-size:12px;font-weight:700;color:#185FA5;background:#E6F1FB;border-radius:7px;padding:5px 12px;display:inline-block;margin-bottom:10px;border:1px solid #B5D4F4}
 .tl-item{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start}
 .tl-time{font-size:11px;font-weight:700;color:#993556;white-space:nowrap;min-width:45px;padding-top:3px}
-.tl-line{display:flex;flex-direction:column;align-items:center;gap:0}
 .tl-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;margin-top:3px}
 .tl-body{flex:1;background:#fff;border-radius:10px;padding:8px 12px;border:1.5px solid #F4C0D1;box-shadow:0 1px 4px rgba(153,53,86,0.06)}
 .tl-alias{font-size:13px;font-weight:700;color:#72243E}
 .tl-res{font-size:12px;color:#3a1528;margin-top:3px;line-height:1.5}
-
-/* MAPA */
 .map-wrap{overflow-x:auto;padding:.5rem 0;background:#fff;border-radius:13px;border:1.5px solid #F4C0D1;box-shadow:0 2px 8px rgba(153,53,86,0.07)}
-
-/* GRAFICOS */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cc{background:#fff;border:1.5px solid #F4C0D1;border-radius:13px;padding:1.1rem;box-shadow:0 2px 8px rgba(153,53,86,0.07)}
 .ct{font-size:11px;font-weight:700;color:#BA7517;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;border-left:3px solid #BA7517;padding-left:8px}
@@ -129,24 +109,19 @@ tr:hover td{background:#FBEAF0}
 .rank-name{font-weight:700;color:#72243E}
 .rank-bar{height:10px;background:#EEEDFE;border-radius:4px;overflow:hidden;margin-top:5px}
 .rank-fill{height:100%;background:#534AB7;border-radius:4px}
-
-/* BUSCADOR */
 .srch-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(153,53,86,0.2);z-index:999;backdrop-filter:blur(2px)}
 .srch-box-modal{background:#fff;border-radius:16px;border:1.5px solid #F4C0D1;padding:1.4rem;width:680px;max-width:95vw;max-height:80vh;overflow-y:auto;margin:5vh auto;box-shadow:0 8px 32px rgba(153,53,86,0.2)}
 .srch-box-modal h3{font-size:15px;font-weight:700;color:#72243E;margin-bottom:1rem}
 .srch-input-row{display:flex;gap:8px;margin-bottom:12px}
 .srch-input-row input{flex:1;font-family:'Nunito',sans-serif;font-size:14px;border:1.5px solid #F4C0D1;border-radius:9px;padding:8px 13px;background:#fff;color:#3a1528}
-.srch-input-row input:focus{outline:none;border-color:#993556}
 .srch-res{background:#FBEAF0;border:1.5px solid #F4C0D1;border-radius:11px;padding:.9rem 1rem;margin-bottom:8px}
 .srch-alias{font-size:13px;font-weight:700;color:#72243E}
 .srch-fecha{font-size:11px;color:#993556;margin-bottom:5px;margin-top:2px}
 .srch-match{font-size:12px;color:#3a1528;background:#fff;border-radius:7px;padding:6px 10px;border:1px solid #F4C0D1;line-height:1.6}
 mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weight:700}
-
-/* BUSCADOR BTN */
 .srch-fab{position:fixed;bottom:24px;right:24px;background:#993556;color:#fff;border:none;border-radius:50%;width:52px;height:52px;font-size:22px;cursor:pointer;box-shadow:0 4px 16px rgba(153,53,86,0.35);display:flex;align-items:center;justify-content:center;z-index:500;transition:all .15s}
 .srch-fab:hover{background:#72243E;transform:scale(1.08)}
-
+.loading{text-align:center;padding:2rem;color:#993556;font-size:14px;font-weight:700}
 @media(max-width:700px){
   .fg4,.fg3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cg{grid-template-columns:1fr}
@@ -157,13 +132,13 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
 </head>
 <body>
 <div class="container">
-
   <div class="header">
     <div>
       <h1>DEPDAO VRAEM</h1>
-      <p id="hcaso">Registro de comunicaciones interceptadas — Sin expediente asignado</p>
+      <p id="hcaso">Registro de comunicaciones interceptadas — Sin expediente</p>
     </div>
     <div class="header-right">
+      <span id="sync-badge" class="sync-badge">Conectando...</span>
       <input type="text" id="caso-input" placeholder="N° caso / expediente" oninput="actualizarCaso()">
     </div>
   </div>
@@ -184,17 +159,12 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
     <button id="t-graf" class="tab tab-graf inactive" onclick="setTab('graf')">&#128202; Graficos</button>
   </div>
 
-  <!-- PANEL REGISTROS -->
   <div id="panel-reg" class="panel active">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
       <div class="filters" style="flex:1;margin-bottom:0">
         <input type="text" id="ft" placeholder="Buscar alias, numero, resumen..." oninput="renderTabla()">
-        <select id="fr" onchange="renderTabla()">
-          <option value="">Toda relevancia</option><option value="alta">Alta</option><option value="media">Media</option><option value="baja">Baja</option>
-        </select>
-        <select id="fti" onchange="renderTabla()">
-          <option value="">Todo tipo</option><option>Llamada</option><option>WhatsApp</option><option>SMS</option>
-        </select>
+        <select id="fr" onchange="renderTabla()"><option value="">Toda relevancia</option><option value="alta">Alta</option><option value="media">Media</option><option value="baja">Baja</option></select>
+        <select id="fti" onchange="renderTabla()"><option value="">Todo tipo</option><option>Llamada</option><option>WhatsApp</option><option>SMS</option></select>
         <input type="date" id="ff" onchange="renderTabla()">
       </div>
       <div style="display:flex;gap:7px">
@@ -203,15 +173,13 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
       </div>
     </div>
     <div class="tw">
-      <table>
-        <thead><tr><th>#</th><th>Fecha</th><th>Hora</th><th>Tipo</th><th>Alias</th><th>N° interceptado</th><th>Operador</th><th>N° contactado</th><th>Alias contacto</th><th>Relevancia</th><th>Resumen</th><th></th></tr></thead>
-        <tbody id="tbody"></tbody>
-      </table>
+      <table><thead><tr><th>#</th><th>Fecha</th><th>Hora</th><th>Tipo</th><th>Alias</th><th>N° interceptado</th><th>Operador</th><th>N° contactado</th><th>Alias contacto</th><th>Relevancia</th><th>Resumen</th><th></th></tr></thead>
+      <tbody id="tbody"></tbody></table>
+      <div class="loading" id="loading-msg">Cargando datos...</div>
       <div class="empty" id="empty-msg" style="display:none">Sin registros. Vaya a "Nueva comunicacion" para ingresar.</div>
     </div>
   </div>
 
-  <!-- PANEL NUEVA -->
   <div id="panel-new" class="panel">
     <div class="form-card">
       <div class="fs">Identificacion</div>
@@ -237,12 +205,11 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
       <div class="fld"><label>Observaciones del analista</label><textarea id="f-obs" placeholder="Apreciaciones, vinculos, hipotesis..."></textarea></div>
       <div class="btn-row">
         <button class="btn" onclick="limpiarForm()">Limpiar</button>
-        <button class="btn btn-p" onclick="agregarRegistro()">&#10003; Registrar comunicacion</button>
+        <button class="btn btn-p" id="btn-registrar" onclick="agregarRegistro()">&#10003; Registrar comunicacion</button>
       </div>
     </div>
   </div>
 
-  <!-- PANEL OBJETIVOS -->
   <div id="panel-obj" class="panel">
     <div id="obj-grid" class="obj-grid"></div>
     <div class="empty" id="obj-empty" style="display:none">Sin objetivos registrados aun.</div>
@@ -255,19 +222,16 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
     </div>
   </div>
 
-  <!-- PANEL LINEA DE TIEMPO -->
   <div id="panel-tl" class="panel">
     <div id="tl-body"></div>
-    <div class="empty" id="tl-empty" style="display:none">Sin comunicaciones para mostrar en la linea de tiempo.</div>
+    <div class="empty" id="tl-empty" style="display:none">Sin comunicaciones para mostrar.</div>
   </div>
 
-  <!-- PANEL MAPA -->
   <div id="panel-map" class="panel">
     <div class="map-wrap"><svg id="map-svg" style="width:100%;min-height:320px"></svg></div>
-    <div class="empty" id="map-empty" style="display:none">Sin suficientes datos para el mapa de vinculos. Registre comunicaciones con alias de contacto.</div>
+    <div class="empty" id="map-empty" style="display:none">Sin suficientes datos para el mapa de vinculos.</div>
   </div>
 
-  <!-- PANEL GRAFICOS -->
   <div id="panel-graf" class="panel">
     <div style="background:#fff;border:1.5px solid #F4C0D1;border-radius:13px;padding:1.1rem;margin-bottom:12px;box-shadow:0 2px 8px rgba(153,53,86,0.07)">
       <div class="ct" style="margin-bottom:12px">Ranking de objetivos por comunicaciones</div>
@@ -278,20 +242,17 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
       <div class="cc"><div class="ct">Por tipo de comunicacion</div><div id="g-tipo"></div></div>
     </div>
   </div>
+</div>
 
-</div><!-- /container -->
-
-<!-- MODAL -->
 <div id="modal-bg" class="modal-bg" style="display:none" onclick="cModal(event)">
   <div class="modal" id="modal-c"></div>
 </div>
 
-<!-- BUSCADOR -->
 <div id="srch-overlay" class="srch-overlay" onclick="cerrarBusqueda(event)">
   <div class="srch-box-modal">
     <h3>&#128269; Buscador avanzado</h3>
     <div class="srch-input-row">
-      <input type="text" id="srch-input" placeholder="Escribe una palabra clave para buscar en transcripciones y resumenes..." oninput="buscarAvanzado()">
+      <input type="text" id="srch-input" placeholder="Buscar palabra clave en transcripciones y resumenes..." oninput="buscarAvanzado()">
       <button class="btn" onclick="document.getElementById('srch-overlay').style.display='none'">Cerrar</button>
     </div>
     <div id="srch-results"></div>
@@ -300,73 +261,121 @@ mark{background:#FAC775;color:#3a1528;border-radius:2px;padding:0 2px;font-weigh
 
 <button class="srch-fab" onclick="abrirBusqueda()" title="Busqueda avanzada (Ctrl+F)">&#128269;</button>
 
-<script>
-let R=JSON.parse(localStorage.getItem('dv4')||'[]');
-let IC=R.length?Math.max(...R.map(r=>r.id))+1:1;
-let CA=localStorage.getItem('dv4_caso')||'';
-const TABS=['reg','new','obj','tl','map','graf'];
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-function save(){localStorage.setItem('dv4',JSON.stringify(R));}
+const firebaseConfig = {
+  apiKey: "AIzaSyAwglwdRUX8BqKKjcIg-biWdNkqyYY3AAw",
+  authDomain: "depdao-vraem.firebaseapp.com",
+  projectId: "depdao-vraem",
+  storageBucket: "depdao-vraem.firebasestorage.app",
+  messagingSenderId: "1002991157590",
+  appId: "1:1002991157590:web:db0f5f716136e1ae9216f7"
+};
 
-function actualizarCaso(){
-  CA=document.getElementById('caso-input').value.trim();
-  localStorage.setItem('dv4_caso',CA);
-  document.getElementById('hcaso').textContent=CA?'Registro de comunicaciones — Expediente: '+CA:'Registro de comunicaciones interceptadas — Sin expediente asignado';
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const colRef = collection(db, "comunicaciones");
+
+let R = [];
+let CA = localStorage.getItem('dv4_caso') || '';
+const TABS = ['reg','new','obj','tl','map','graf'];
+
+function setSyncBadge(estado){
+  const b = document.getElementById('sync-badge');
+  if(estado === 'ok'){b.textContent = '● En linea';b.className='sync-badge ok';}
+  else if(estado === 'err'){b.textContent = '● Sin conexion';b.className='sync-badge err';}
+  else{b.textContent = 'Conectando...';b.className='sync-badge';}
 }
 
-function setTab(t){
-  TABS.forEach(k=>document.getElementById('t-'+k).classList.toggle('inactive',k!==t));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+const q = query(colRef, orderBy("fechaHora","desc"));
+onSnapshot(q, (snapshot) => {
+  R = snapshot.docs.map(d => ({...d.data(), _id: d.id}));
+  setSyncBadge('ok');
+  document.getElementById('loading-msg').style.display = 'none';
+  renderTabla();
+  stats();
+  const tabActual = TABS.find(t => document.getElementById('panel-'+t).classList.contains('active'));
+  if(tabActual === 'obj') renderObj();
+  if(tabActual === 'tl') renderTL();
+  if(tabActual === 'map') renderMap();
+  if(tabActual === 'graf') renderGraf();
+}, (error) => {
+  setSyncBadge('err');
+  document.getElementById('loading-msg').style.display = 'none';
+  console.error(error);
+});
+
+window.actualizarCaso = function(){
+  CA = document.getElementById('caso-input').value.trim();
+  localStorage.setItem('dv4_caso', CA);
+  document.getElementById('hcaso').textContent = CA ? 'Registro de comunicaciones — Expediente: '+CA : 'Registro de comunicaciones interceptadas — Sin expediente';
+};
+
+window.setTab = function(t){
+  TABS.forEach(k => document.getElementById('t-'+k).classList.toggle('inactive', k!==t));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('panel-'+t).classList.add('active');
-  if(t==='obj')renderObj();
-  if(t==='tl')renderTL();
-  if(t==='map')renderMap();
-  if(t==='graf')renderGraf();
-}
+  if(t==='obj') renderObj();
+  if(t==='tl') renderTL();
+  if(t==='map') renderMap();
+  if(t==='graf') renderGraf();
+};
 
-function agregarRegistro(){
-  const fecha=document.getElementById('f-fecha').value;
-  const alias=document.getElementById('f-alias').value.trim();
-  const res=document.getElementById('f-res').value.trim();
+window.agregarRegistro = async function(){
+  const fecha = document.getElementById('f-fecha').value;
+  const alias = document.getElementById('f-alias').value.trim();
+  const res = document.getElementById('f-res').value.trim();
   if(!fecha||!alias||!res){alert('Complete: Fecha, Alias y Resumen.');return;}
-  R.unshift({
-    id:IC++,fecha,hora:document.getElementById('f-hora').value,
-    tipo:document.getElementById('f-tipo').value,relevancia:document.getElementById('f-rel').value,
-    alias,numero:document.getElementById('f-num').value.trim(),
-    operador:document.getElementById('f-op').value,
-    contacto:document.getElementById('f-cont').value.trim(),
-    aliasContacto:document.getElementById('f-acont').value.trim(),
-    resumen:res,transcripcion:document.getElementById('f-trans').value.trim(),
-    obs:document.getElementById('f-obs').value.trim()
-  });
-  save();limpiarForm();stats();setTab('reg');renderTabla();
-}
+  const btn = document.getElementById('btn-registrar');
+  btn.disabled = true; btn.textContent = 'Guardando...';
+  try {
+    await addDoc(colRef, {
+      fecha, hora: document.getElementById('f-hora').value,
+      tipo: document.getElementById('f-tipo').value,
+      relevancia: document.getElementById('f-rel').value,
+      alias, numero: document.getElementById('f-num').value.trim(),
+      operador: document.getElementById('f-op').value,
+      contacto: document.getElementById('f-cont').value.trim(),
+      aliasContacto: document.getElementById('f-acont').value.trim(),
+      resumen: res,
+      transcripcion: document.getElementById('f-trans').value.trim(),
+      obs: document.getElementById('f-obs').value.trim(),
+      fechaHora: fecha + 'T' + (document.getElementById('f-hora').value || '00:00'),
+      creadoEn: new Date().toISOString()
+    });
+    limpiarForm();
+    setTab('reg');
+  } catch(e){ alert('Error al guardar: '+e.message); }
+  btn.disabled = false; btn.textContent = '✓ Registrar comunicacion';
+};
 
 function limpiarForm(){
-  ['f-fecha','f-hora','f-alias','f-num','f-cont','f-acont','f-res','f-trans','f-obs'].forEach(id=>document.getElementById(id).value='');
+  ['f-fecha','f-hora','f-alias','f-num','f-cont','f-acont','f-res','f-trans','f-obs'].forEach(id => document.getElementById(id).value='');
   document.getElementById('f-tipo').value='Llamada';
   document.getElementById('f-rel').value='media';
   document.getElementById('f-op').value='';
-  document.getElementById('f-fecha').value=hoy();
+  document.getElementById('f-fecha').value = hoy();
 }
 
 function filtrar(){
-  const txt=document.getElementById('ft').value.toLowerCase();
-  const rel=document.getElementById('fr').value;
-  const tipo=document.getElementById('fti').value;
-  const fecha=document.getElementById('ff').value;
-  return R.filter(r=>{
-    const mt=!txt||(r.alias+r.numero+r.resumen+r.contacto+r.aliasContacto+(r.transcripcion||'')).toLowerCase().includes(txt);
+  const txt = document.getElementById('ft').value.toLowerCase();
+  const rel = document.getElementById('fr').value;
+  const tipo = document.getElementById('fti').value;
+  const fecha = document.getElementById('ff').value;
+  return R.filter(r => {
+    const mt = !txt||(r.alias+r.numero+r.resumen+r.contacto+r.aliasContacto+(r.transcripcion||'')).toLowerCase().includes(txt);
     return mt&&(!rel||r.relevancia===rel)&&(!tipo||r.tipo===tipo)&&(!fecha||r.fecha===fecha);
   });
 }
 
 function renderTabla(){
-  const lista=filtrar();
-  const tb=document.getElementById('tbody');
-  document.getElementById('empty-msg').style.display=lista.length?'none':'block';
+  const lista = filtrar();
+  const tb = document.getElementById('tbody');
+  document.getElementById('empty-msg').style.display = lista.length ? 'none' : 'block';
   if(!lista.length){tb.innerHTML='';return;}
-  tb.innerHTML=lista.map((r,i)=>`<tr>
+  tb.innerHTML = lista.map((r,i) => `<tr>
     <td style="color:#534AB7;font-weight:700;font-size:11px">${i+1}</td>
     <td style="white-space:nowrap;font-weight:600">${r.fecha||'—'}</td>
     <td style="white-space:nowrap">${r.hora||'—'}</td>
@@ -379,27 +388,27 @@ function renderTabla(){
     <td><span class="badge ${r.relevancia}">${r.relevancia.charAt(0).toUpperCase()+r.relevancia.slice(1)}</span></td>
     <td style="max-width:180px;word-break:break-word;font-size:12px">${esc(r.resumen)}</td>
     <td style="white-space:nowrap">
-      <button class="abt" title="Ver detalle" onclick="verDet(${r.id})">&#128065;</button>
-      <button class="abt" title="Editar" onclick="editReg(${r.id})">&#9998;</button>
-      <button class="abt del" title="Eliminar" onclick="del(${r.id})">&#10005;</button>
+      <button class="abt" onclick="verDet('${r._id}')">&#128065;</button>
+      <button class="abt" onclick="editReg('${r._id}')">&#9998;</button>
+      <button class="abt del" onclick="delReg('${r._id}')">&#10005;</button>
     </td></tr>`).join('');
 }
 
 function stats(){
-  document.getElementById('s-total').textContent=R.length;
-  document.getElementById('s-alta').textContent=R.filter(r=>r.relevancia==='alta').length;
-  document.getElementById('s-media').textContent=R.filter(r=>r.relevancia==='media').length;
-  document.getElementById('s-baja').textContent=R.filter(r=>r.relevancia==='baja').length;
+  document.getElementById('s-total').textContent = R.length;
+  document.getElementById('s-alta').textContent = R.filter(r=>r.relevancia==='alta').length;
+  document.getElementById('s-media').textContent = R.filter(r=>r.relevancia==='media').length;
+  document.getElementById('s-baja').textContent = R.filter(r=>r.relevancia==='baja').length;
 }
 
-function del(id){
-  if(!confirm('Eliminar este registro?'))return;
-  R=R.filter(r=>r.id!==id);save();renderTabla();stats();
-}
+window.delReg = async function(id){
+  if(!confirm('Eliminar este registro?')) return;
+  await deleteDoc(doc(db,'comunicaciones',id));
+};
 
-function verDet(id){
-  const r=R.find(x=>x.id===id);if(!r)return;
-  document.getElementById('modal-c').innerHTML=`
+window.verDet = function(id){
+  const r = R.find(x=>x._id===id); if(!r) return;
+  document.getElementById('modal-c').innerHTML = `
     <h3>Detalle de comunicacion</h3>
     <table style="width:100%;font-size:13px;border-collapse:collapse">
       ${fl('Fecha / Hora',(r.fecha||'—')+' '+(r.hora||''))}
@@ -408,19 +417,19 @@ function verDet(id){
       ${fl('N° contactado',r.contacto||'—')}${fl('Alias contacto',r.aliasContacto||'—')}
       ${fl('Relevancia',r.relevancia.toUpperCase())}${fl('Resumen',r.resumen)}
       ${r.transcripcion?fl('Transcripcion',r.transcripcion):''}
-      ${r.obs?fl('Observaciones analista',r.obs):''}
+      ${r.obs?fl('Observaciones',r.obs):''}
     </table>
     <div style="text-align:right;margin-top:1rem"><button class="btn" onclick="cModalBtn()">Cerrar</button></div>`;
   document.getElementById('modal-bg').style.display='flex';
-}
+};
 
 function fl(label,val){
   return`<tr><td style="color:#993556;padding:6px 9px;width:155px;vertical-align:top;border-bottom:1px solid #F4C0D1;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em">${label}</td><td style="padding:6px 9px;border-bottom:1px solid #F4C0D1;color:#3a1528;font-size:13px">${esc(val)}</td></tr>`;
 }
 
-function editReg(id){
-  const r=R.find(x=>x.id===id);if(!r)return;
-  document.getElementById('modal-c').innerHTML=`
+window.editReg = function(id){
+  const r = R.find(x=>x._id===id); if(!r) return;
+  document.getElementById('modal-c').innerHTML = `
     <h3>Editar comunicacion</h3>
     <div class="fg fg2" style="gap:8px;margin-bottom:8px">
       <div class="fld"><label>Fecha</label><input type="date" id="e-fecha" value="${r.fecha||''}"></div>
@@ -433,45 +442,48 @@ function editReg(id){
       <div class="fld"><label>N° contactado</label><input type="text" id="e-cont" value="${esc(r.contacto)}"></div>
     </div>
     <div class="fld" style="margin-bottom:8px"><label>Resumen</label><textarea id="e-res">${esc(r.resumen)}</textarea></div>
-    <div class="fld" style="margin-bottom:8px"><label>Transcripcion literal</label><textarea id="e-trans" style="min-height:64px">${esc(r.transcripcion||'')}</textarea></div>
-    <div class="fld" style="margin-bottom:8px"><label>Observaciones analista</label><textarea id="e-obs">${esc(r.obs||'')}</textarea></div>
+    <div class="fld" style="margin-bottom:8px"><label>Transcripcion</label><textarea id="e-trans">${esc(r.transcripcion||'')}</textarea></div>
+    <div class="fld" style="margin-bottom:8px"><label>Observaciones</label><textarea id="e-obs">${esc(r.obs||'')}</textarea></div>
     <div style="text-align:right;margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
       <button class="btn" onclick="cModalBtn()">Cancelar</button>
-      <button class="btn btn-p" onclick="saveEdit(${id})">Guardar cambios</button>
+      <button class="btn btn-p" onclick="saveEdit('${id}')">Guardar cambios</button>
     </div>`;
   document.getElementById('modal-bg').style.display='flex';
-}
+};
 
-function saveEdit(id){
-  const r=R.find(x=>x.id===id);if(!r)return;
-  r.fecha=document.getElementById('e-fecha').value;
-  r.hora=document.getElementById('e-hora').value;
-  r.tipo=document.getElementById('e-tipo').value;
-  r.relevancia=document.getElementById('e-rel').value;
-  r.alias=document.getElementById('e-alias').value.trim();
-  r.numero=document.getElementById('e-num').value.trim();
-  r.operador=document.getElementById('e-op').value;
-  r.contacto=document.getElementById('e-cont').value.trim();
-  r.resumen=document.getElementById('e-res').value.trim();
-  r.transcripcion=document.getElementById('e-trans').value.trim();
-  r.obs=document.getElementById('e-obs').value.trim();
-  save();cModalBtn();renderTabla();stats();
-}
+window.saveEdit = async function(id){
+  const fecha = document.getElementById('e-fecha').value;
+  const hora = document.getElementById('e-hora').value;
+  await updateDoc(doc(db,'comunicaciones',id),{
+    fecha, hora,
+    tipo: document.getElementById('e-tipo').value,
+    relevancia: document.getElementById('e-rel').value,
+    alias: document.getElementById('e-alias').value.trim(),
+    numero: document.getElementById('e-num').value.trim(),
+    operador: document.getElementById('e-op').value,
+    contacto: document.getElementById('e-cont').value.trim(),
+    resumen: document.getElementById('e-res').value.trim(),
+    transcripcion: document.getElementById('e-trans').value.trim(),
+    obs: document.getElementById('e-obs').value.trim(),
+    fechaHora: fecha+'T'+(hora||'00:00')
+  });
+  cModalBtn();
+};
 
-function cModal(e){if(e.target.id==='modal-bg')cModalBtn();}
-function cModalBtn(){document.getElementById('modal-bg').style.display='none';}
+window.cModal = function(e){ if(e.target.id==='modal-bg') cModalBtn(); };
+window.cModalBtn = function(){ document.getElementById('modal-bg').style.display='none'; };
 
 function renderObj(){
-  const aliases={};
+  const aliases = {};
   R.forEach(r=>{
-    if(!aliases[r.alias])aliases[r.alias]={alias:r.alias,numeros:new Set(),contactos:new Set(),total:0,alta:0,registros:[]};
+    if(!aliases[r.alias]) aliases[r.alias]={alias:r.alias,numeros:new Set(),contactos:new Set(),total:0,alta:0,registros:[]};
     const o=aliases[r.alias];
     o.total++;if(r.relevancia==='alta')o.alta++;
     if(r.numero)o.numeros.add(r.numero);
     if(r.aliasContacto)o.contactos.add(r.aliasContacto);
     o.registros.push(r);
   });
-  const objs=Object.values(aliases);
+  const objs = Object.values(aliases);
   const grid=document.getElementById('obj-grid');
   const emp=document.getElementById('obj-empty');
   const det=document.getElementById('obj-detalle');
@@ -484,14 +496,14 @@ function renderObj(){
         <div class="obj-name">${esc(o.alias)}</div>
         <div style="background:#EEEDFE;color:#534AB7;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px">${o.total}</div>
       </div>
-      <div class="obj-num">${[...o.numeros].join(', ')||'Sin numero registrado'}</div>
-      ${o.alta?`<div style="font-size:11px;font-weight:700;color:#A32D2D;margin-bottom:4px">${o.alta} comunicaciones urgentes</div>`:''}
-      ${o.contactos.size?`<div style="font-size:11px;color:#993556;margin-top:4px">Contactos: ${[...o.contactos].slice(0,3).join(', ')}${o.contactos.size>3?'...':''}</div>`:''}
+      <div class="obj-num">${[...o.numeros].join(', ')||'Sin numero'}</div>
+      ${o.alta?`<div style="font-size:11px;font-weight:700;color:#A32D2D;margin-bottom:4px">${o.alta} urgentes</div>`:''}
+      ${o.contactos.size?`<div style="font-size:11px;color:#993556;margin-top:4px">Contactos: ${[...o.contactos].slice(0,3).join(', ')}</div>`:''}
       <div style="font-size:11px;color:#185FA5;margin-top:6px;font-weight:600">Ver historial &#8594;</div>
     </div>`).join('');
 }
 
-function verObj(alias){
+window.verObj = function(alias){
   const regs=R.filter(r=>r.alias===alias).sort((a,b)=>(b.fecha+(b.hora||'')).localeCompare(a.fecha+(a.hora||'')));
   document.getElementById('obj-grid').style.display='none';
   document.getElementById('obj-empty').style.display='none';
@@ -511,14 +523,13 @@ function verObj(alias){
         <div style="font-size:13px;color:#3a1528;margin-bottom:4px">${esc(r.resumen)}</div>
         ${r.transcripcion?`<div style="font-size:12px;color:#72243E;font-style:italic;background:#FBEAF0;border-radius:6px;padding:5px 9px;margin-top:5px">"${esc(r.transcripcion.substring(0,160))}${r.transcripcion.length>160?'...':''}"</div>`:''}
         ${r.contacto?`<div style="font-size:11px;color:#993556;margin-top:5px;font-weight:600">&#8594; ${esc(r.contacto)}${r.aliasContacto?' ('+esc(r.aliasContacto)+')':''}</div>`:''}
-        ${r.obs?`<div style="font-size:11px;color:#534AB7;margin-top:4px;font-weight:600">Obs: ${esc(r.obs)}</div>`:''}
       </div>`).join('')}`;
-}
+};
 
-function cerrarObjDetalle(){
+window.cerrarObjDetalle = function(){
   document.getElementById('obj-detalle').style.display='none';
   renderObj();
-}
+};
 
 function renderTL(){
   const sorted=[...R].filter(r=>r.fecha).sort((a,b)=>(a.fecha+(a.hora||'00:00')).localeCompare(b.fecha+(b.hora||'00:00')));
@@ -535,9 +546,7 @@ function renderTL(){
       ${items.map(r=>`
         <div class="tl-item">
           <div class="tl-time">${r.hora||'--:--'}</div>
-          <div style="display:flex;flex-direction:column;align-items:center;padding-top:3px;margin-right:2px">
-            <div class="tl-dot" style="background:${dotColors[r.relevancia]}"></div>
-          </div>
+          <div class="tl-dot" style="background:${dotColors[r.relevancia]};margin-top:3px;margin-right:2px"></div>
           <div class="tl-body">
             <div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:4px">
               <span class="tl-alias">${esc(r.alias)}</span>
@@ -569,19 +578,14 @@ function renderMap(){
   emp.style.display='none';
   const arr=[...nodes];const n=arr.length;
   const W=700,H=Math.max(340,n*65);
-  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  svg.setAttribute('height',H);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.setAttribute('height',H);
   const cx=W/2,cy=H/2,r2=Math.min(cx,cy)-70;
   const pos={};
-  arr.forEach((name,i)=>{
-    const angle=(2*Math.PI*i/n)-Math.PI/2;
-    pos[name]={x:cx+r2*Math.cos(angle),y:cy+r2*Math.sin(angle)};
-  });
+  arr.forEach((name,i)=>{const angle=(2*Math.PI*i/n)-Math.PI/2;pos[name]={x:cx+r2*Math.cos(angle),y:cy+r2*Math.sin(angle)};});
   const maxV=Math.max(...Object.values(vinculos));
   let html='';
   Object.entries(vinculos).forEach(([key,cnt])=>{
-    const[a,b]=key.split('|||');
-    if(!pos[a]||!pos[b])return;
+    const[a,b]=key.split('|||');if(!pos[a]||!pos[b])return;
     const sw=1+Math.round((cnt/maxV)*5);
     html+=`<line x1="${pos[a].x}" y1="${pos[a].y}" x2="${pos[b].x}" y2="${pos[b].y}" stroke="#F4C0D1" stroke-width="${sw}" opacity="0.85"/>`;
     const mx=(pos[a].x+pos[b].x)/2,my=(pos[a].y+pos[b].y)/2;
@@ -600,51 +604,43 @@ function renderMap(){
 
 function renderGraf(){
   const alias={},rel={alta:0,media:0,baja:0},tipo={};
-  R.forEach(r=>{
-    alias[r.alias]=(alias[r.alias]||0)+1;
-    rel[r.relevancia]=(rel[r.relevancia]||0)+1;
-    tipo[r.tipo]=(tipo[r.tipo]||0)+1;
-  });
+  R.forEach(r=>{alias[r.alias]=(alias[r.alias]||0)+1;rel[r.relevancia]=(rel[r.relevancia]||0)+1;tipo[r.tipo]=(tipo[r.tipo]||0)+1;});
   const ranked=Object.entries(alias).sort((a,b)=>b[1]-a[1]);
   const maxA=ranked.length?ranked[0][1]:1;
   const relColors={alta:'#E24B4A',media:'#EF9F27',baja:'#1D9E75'};
   const tipoColors={Llamada:'#D4537E',WhatsApp:'#7F77DD',SMS:'#D85A30',Otro:'#888780'};
   document.getElementById('rank-body').innerHTML=`
     <table class="rank-table">${ranked.map(([name,cnt],i)=>`
-      <tr>
-        <td class="rank-num">${i+1}</td>
-        <td><div class="rank-name">${esc(name)}</div><div class="rank-bar"><div class="rank-fill" style="width:${Math.round(cnt/maxA*100)}%"></div></div></td>
-        <td style="font-size:16px;font-weight:700;color:#534AB7;text-align:right">${cnt}</td>
-      </tr>`).join('')||'<tr><td colspan="3" style="color:#993556;font-weight:700;padding:10px">Sin datos aun.</td></tr>'}
+      <tr><td class="rank-num">${i+1}</td>
+      <td><div class="rank-name">${esc(name)}</div><div class="rank-bar"><div class="rank-fill" style="width:${Math.round(cnt/maxA*100)}%"></div></div></td>
+      <td style="font-size:16px;font-weight:700;color:#534AB7;text-align:right">${cnt}</td></tr>`).join('')||
+      '<tr><td colspan="3" style="color:#993556;font-weight:700;padding:10px">Sin datos aun.</td></tr>'}
     </table>`;
   document.getElementById('g-rel').innerHTML=Object.entries(rel).map(([k,n])=>`
-    <div class="br">
-      <div class="bl">${k.charAt(0).toUpperCase()+k.slice(1)}</div>
-      <div class="btr"><div class="bf" style="width:${R.length?Math.round(n/R.length*100):0}%;background:${relColors[k]}"></div></div>
-      <div class="bc">${n}</div>
-    </div>`).join('');
+    <div class="br"><div class="bl">${k.charAt(0).toUpperCase()+k.slice(1)}</div>
+    <div class="btr"><div class="bf" style="width:${R.length?Math.round(n/R.length*100):0}%;background:${relColors[k]}"></div></div>
+    <div class="bc">${n}</div></div>`).join('');
   document.getElementById('g-tipo').innerHTML=Object.entries(tipo).map(([k,n])=>`
     <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
       <div style="width:12px;height:12px;border-radius:50%;background:${tipoColors[k]||'#888'};flex-shrink:0"></div>
       <span style="font-size:13px;font-weight:700;color:#3a1528;flex:1">${k}</span>
       <span style="font-size:14px;font-weight:700;color:#BA7517">${n}</span>
-    </div>`).join('')||'<div style="color:#BA7517;font-size:13px;font-weight:700">Sin datos aun.</div>';
+    </div>`).join('')||'<div style="color:#BA7517;font-size:13px;font-weight:700">Sin datos.</div>';
 }
 
-function abrirBusqueda(){
+window.abrirBusqueda = function(){
   document.getElementById('srch-overlay').style.display='block';
   setTimeout(()=>document.getElementById('srch-input').focus(),100);
-}
+};
+window.cerrarBusqueda = function(e){ if(e.target.id==='srch-overlay') document.getElementById('srch-overlay').style.display='none'; };
 
-function cerrarBusqueda(e){if(e.target.id==='srch-overlay')document.getElementById('srch-overlay').style.display='none';}
-
-function buscarAvanzado(){
+window.buscarAvanzado = function(){
   const kw=document.getElementById('srch-input').value.trim().toLowerCase();
   const res=document.getElementById('srch-results');
   if(!kw){res.innerHTML='';return;}
   const matches=R.filter(r=>(r.transcripcion||'').toLowerCase().includes(kw)||(r.resumen||'').toLowerCase().includes(kw));
-  if(!matches.length){res.innerHTML='<div class="empty">Sin resultados para esa palabra clave.</div>';return;}
-  res.innerHTML=`<div style="font-size:12px;color:#993556;font-weight:700;margin-bottom:8px">${matches.length} resultado(s) encontrado(s)</div>`+
+  if(!matches.length){res.innerHTML='<div class="empty">Sin resultados.</div>';return;}
+  res.innerHTML=`<div style="font-size:12px;color:#993556;font-weight:700;margin-bottom:8px">${matches.length} resultado(s)</div>`+
   matches.map(r=>{
     const src=(r.transcripcion&&r.transcripcion.toLowerCase().includes(kw))?r.transcripcion:r.resumen;
     const idx=src.toLowerCase().indexOf(kw);
@@ -657,48 +653,43 @@ function buscarAvanzado(){
       <div class="srch-match">...${marked}...</div>
     </div>`;
   }).join('');
-}
-
-function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function hoy(){return new Date().toISOString().split('T')[0];}
+};
 
 function exportarWord(){
-  const lista=filtrar();
-  const caso=CA?`Expediente N° ${CA}`:'Sin expediente';
-  let html=`<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'><style>body{font-family:Arial,sans-serif;font-size:10pt}h2{color:#72243E;font-size:14pt}table{border-collapse:collapse;width:100%}th{background:#F4C0D1;border:1px solid #D4537E;padding:5px;font-size:9pt;text-align:left;color:#72243E}td{border:1px solid #F4C0D1;padding:5px;font-size:9pt;vertical-align:top}.alta{color:#C00000;font-weight:bold}.media{color:#7F6000}.baja{color:#375623}</style></head><body>
+  const lista=filtrar();const caso=CA?`Expediente N° ${CA}`:'Sin expediente';
+  let html=`<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word'><head><meta charset='utf-8'><style>body{font-family:Arial,sans-serif;font-size:10pt}h2{color:#72243E}table{border-collapse:collapse;width:100%}th{background:#F4C0D1;border:1px solid #D4537E;padding:5px;font-size:9pt;color:#72243E}td{border:1px solid #F4C0D1;padding:5px;font-size:9pt;vertical-align:top}.alta{color:#C00000;font-weight:bold}.media{color:#7F6000}.baja{color:#375623}</style></head><body>
   <h2>DEPDAO VRAEM — REGISTRO DE COMUNICACIONES INTERCEPTADAS</h2>
-  <p><b>${caso}</b> | Generado: ${new Date().toLocaleString('es-PE')} | Total registros: ${lista.length}</p><br>
+  <p><b>${caso}</b> | Generado: ${new Date().toLocaleString('es-PE')} | Total: ${lista.length}</p><br>
   <table><tr><th>#</th><th>Fecha</th><th>Hora</th><th>Tipo</th><th>Alias</th><th>N° Interceptado</th><th>Operador</th><th>N° Contactado</th><th>Alias Contacto</th><th>Relevancia</th><th>Resumen</th><th>Transcripcion</th><th>Observaciones</th></tr>`;
   lista.forEach((r,i)=>{html+=`<tr><td>${i+1}</td><td>${r.fecha||''}</td><td>${r.hora||''}</td><td>${r.tipo||''}</td><td><b>${r.alias}</b></td><td>${r.numero||''}</td><td>${r.operador||''}</td><td>${r.contacto||''}</td><td>${r.aliasContacto||''}</td><td class="${r.relevancia}">${r.relevancia.toUpperCase()}</td><td>${r.resumen}</td><td>${r.transcripcion||''}</td><td>${r.obs||''}</td></tr>`;});
   html+=`</table></body></html>`;
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([html],{type:'application/msword'}));
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'application/msword'}));
   a.download=`DEPDAO_VRAEM_${CA||'registro'}_${hoy()}.doc`;a.click();
 }
+window.exportarWord = exportarWord;
 
 function exportarPrint(){
   const lista=filtrar();const caso=CA?`Expediente N° ${CA}`:'Sin expediente';
-  let html=`<html><head><meta charset='utf-8'><style>body{font-family:Arial;font-size:10pt;padding:20px}h2{color:#72243E}table{width:100%;border-collapse:collapse}th{background:#F4C0D1;border:1px solid #D4537E;padding:5px;font-size:8pt;color:#72243E;text-align:left}td{border:1px solid #F4C0D1;padding:5px;font-size:8pt;vertical-align:top}.alta{color:#C00000;font-weight:bold}.media{color:#7F6000}.baja{color:#375623}@media print{body{padding:0}}</style></head><body>
+  let html=`<html><head><meta charset='utf-8'><style>body{font-family:Arial;font-size:10pt;padding:20px}h2{color:#72243E}table{width:100%;border-collapse:collapse}th{background:#F4C0D1;border:1px solid #D4537E;padding:5px;font-size:8pt;color:#72243E;text-align:left}td{border:1px solid #F4C0D1;padding:5px;font-size:8pt;vertical-align:top}.alta{color:#C00000;font-weight:bold}.media{color:#7F6000}.baja{color:#375623}</style></head><body>
   <h2>DEPDAO VRAEM</h2><p>${caso} | ${new Date().toLocaleString('es-PE')} | Total: ${lista.length}</p>
   <table><tr><th>#</th><th>Fecha</th><th>Hora</th><th>Tipo</th><th>Alias</th><th>N°</th><th>Operador</th><th>Contactado</th><th>Relevancia</th><th>Resumen</th></tr>`;
   lista.forEach((r,i)=>{html+=`<tr><td>${i+1}</td><td>${r.fecha||''}</td><td>${r.hora||''}</td><td>${r.tipo||''}</td><td><b>${r.alias}</b></td><td>${r.numero||''}</td><td>${r.operador||''}</td><td>${r.contacto||''}</td><td class="${r.relevancia}">${r.relevancia.toUpperCase()}</td><td>${r.resumen}</td></tr>`;});
   html+=`</table></body></html>`;
   const w=window.open('','_blank');w.document.write(html);w.document.close();w.print();
 }
+window.exportarPrint = exportarPrint;
+
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function hoy(){return new Date().toISOString().split('T')[0];}
 
 document.addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&e.key==='f'){e.preventDefault();abrirBusqueda();}
-  if(e.key==='Escape'){
-    document.getElementById('modal-bg').style.display='none';
-    document.getElementById('srch-overlay').style.display='none';
-  }
+  if(e.key==='Escape'){document.getElementById('modal-bg').style.display='none';document.getElementById('srch-overlay').style.display='none';}
 });
 
 document.getElementById('caso-input').value=CA;
 actualizarCaso();
 document.getElementById('f-fecha').value=hoy();
-renderTabla();
-stats();
 </script>
 </body>
 </html>
